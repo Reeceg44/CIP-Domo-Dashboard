@@ -16,9 +16,7 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 <img width="1889" height="707" alt="image" src="https://github.com/user-attachments/assets/6d8a5348-6a4a-4649-82d7-ca7c0b643bdc" />
 
 
-## 1. Pulling the data sources together
-
-Data Sources:
+## 1. Data Sources
 
 <img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/392f9180-0eb4-4d71-9cc7-e8cda5ad479e" /> CIP from 2018 to 2024 (Excel Upload)
 
