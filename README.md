@@ -1,19 +1,12 @@
-# CIP-Domo-Dashboard
-CIP Domo Dashboard created during my time as a Financial Analyst. This dashboard uses anonymized data.
+# CIP Domo Dashboard Overview
+I created a dashboard dedicated to tracking the balance in Briggs & Stratton's CIP (Construction in Process) balance sheet account. The project uses anonymized data to protect company data integrity. 
 
-<a href="https://github.com/user-attachments/assets/616b5945-8b97-4256-85d0-e7ad2f05f141">
-  <img width="1639" height="695" alt="image" src="https://github.com/user-attachments/assets/616b5945-8b97-4256-85d0-e7ad2f05f141" />
-</a>
+Tools Used: SAP S/4HANA, DOMO, Excel, Google Sheets
+Dataset: CIP Dataset created from joining multiple tables within DOMO's native ETL tool.
 
-<a href="https://github.com/user-attachments/assets/7dd7f72f-af38-48be-b951-2d9953eb6f12">
-<img width="1649" height="558" alt="image" src="https://github.com/user-attachments/assets/7dd7f72f-af38-48be-b951-2d9953eb6f12" />
-</a>
+## 🧠 Project Goal and Background
 
-<a href="https://github.com/user-attachments/assets/b743c615-2b4b-47e4-aa42-30d28249739d">
-<img width="1654" height="671" alt="image" src="https://github.com/user-attachments/assets/b743c615-2b4b-47e4-aa42-30d28249739d" />
-</a>
+- The goal of this project was to automate the process of pulling multiple tables together manually on a monthly basis related to CIP. This automated solution assists the business in properly tracking current capital projects in CIP. 
 
-<a href="https://github.com/user-attachments/assets/c7b966dc-1372-467b-9746-3255c1eb758b">
-<img width="1654" height="546" alt="image" src="https://github.com/user-attachments/assets/c7b966dc-1372-467b-9746-3255c1eb758b" />
-</a>
+- If a project with its assets is considered to be in-service, it is the responsibility of the project's business segment to capitalize the project and its assets. This dashboard helps to facilitate this process. 
 
