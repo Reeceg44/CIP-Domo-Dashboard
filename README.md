@@ -18,27 +18,27 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 ## 1. Data Sources
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/392f9180-0eb4-4d71-9cc7-e8cda5ad479e" /> CIP from 2018 to 2024 (Excel Upload)
+<img width="20" alt="image" src="https://github.com/user-attachments/assets/392f9180-0eb4-4d71-9cc7-e8cda5ad479e" /> CIP from 2018 to 2024 (Excel Upload)
 
 - This dataset contains CIP account balance sheet data posted in journal entries from 2018 to 2024. It was originally exported from SAP into Excel, and then uploaded to DOMO.
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/b0a49e58-0ad9-4739-a164-fed8cdcd9724" /> CIP since 1/1/2025 (DOMO Dataset View)
+<img width="20" alt="image" src="https://github.com/user-attachments/assets/b0a49e58-0ad9-4739-a164-fed8cdcd9724" /> CIP since 1/1/2025 (DOMO Dataset View)
 
 - This dataset also contains CIP account balance sheet data posted in journal entries except it's a current and ongoing DOMO data view. It contains data since 1/1/2025 from SAP.
 - This dataset doesn't include data from pre-2025 because the pre-2025 balance sheet data behind this dataset view isn't presented in a consistent way between DOMO and SAP. The pre and post 2025 data are appended later in the ETL to help paint the full picture.  
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/5444f2c5-c0a0-42dd-97ae-a5b63a4f4fc7" /> PRPS Table from SAP
+<img width="20" alt="image" src="https://github.com/user-attachments/assets/5444f2c5-c0a0-42dd-97ae-a5b63a4f4fc7" /> PRPS Table from SAP
 
 - PRPS is a table native to SAP S/4HANA. It contains information pertaining to WBS elements such as project names, descriptions, company codes, etc.
 - This PRPS table is considered by DOMO to be an ODBC (Open Database Connectivity). The dataset updates on a daily basis.
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/89fed7ab-5d62-48f4-a9d8-5dc82c025ad7" />  CIP Open Projects Google Sheet
+<img width="20" alt="image" src="https://github.com/user-attachments/assets/89fed7ab-5d62-48f4-a9d8-5dc82c025ad7" />  CIP Open Projects Google Sheet
 
 - The function of this Google sheet is to list relevant information related to WBS elements with non-zero balances in CIP. It is connected to DOMO via DOMO's native Google Sheets connector tool. 
 - Finance representatives from various business units have the ability to make changes to items such as in-service dates, project managers, and comments regarding the status of WBS elements.
 - The information in this Google sheet is not readily available in SAP, so it is joined with other tables in the ETL.
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/5444f2c5-c0a0-42dd-97ae-a5b63a4f4fc7" /> RPSCO Table from SAP
+<img width="20" alt="image" src="https://github.com/user-attachments/assets/5444f2c5-c0a0-42dd-97ae-a5b63a4f4fc7" /> RPSCO Table from SAP
 
 - RPSCO is another native table to SAP connected to DOMO via an ODBC. 
 - It containes budget information for object numbers within the SAP ecosystem.
@@ -48,7 +48,7 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 - Formulas/additional columns were added to the "CIP from 2018 to 2024" Excel upload to possess the same amount of columns as the "CIP since 1/1/2025" in order for the later append between the two datasets to function properly.
 
-<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/61f4f9eb-73f8-4f9e-9bc9-f9ed4e81b6e0" />
+<img width="1353" alt="image" src="https://github.com/user-attachments/assets/61f4f9eb-73f8-4f9e-9bc9-f9ed4e81b6e0" />
 
 
 
@@ -65,6 +65,6 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 - The CIP SAP G/L data append is joined with the PRPS table from SAP with the following expression. The REGEXP_REPLACE function is used to link the datasets together even if the join column of "Assignment" from the "Append Rows" dataset and the "POSID" column from the "Select_PRPS" have inconsistent formatting. The pattern "[^a-zA-Z0-9]" looks for any character that is not a lowercase letter, not an uppercase letter, and not a number. It then replaces non-alphanumeric characters (spaces, dashes, slashes, periods) with nothing (an empty string).
 
-<img width="1058" height="758" alt="image" src="https://github.com/user-attachments/assets/a7d57037-1828-421f-932e-5ca371c57666" />
+<img width="1058" alt="image" src="https://github.com/user-attachments/assets/a7d57037-1828-421f-932e-5ca371c57666" />
 
   
