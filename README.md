@@ -50,19 +50,7 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 <img width="1353" alt="image" src="https://github.com/user-attachments/assets/61f4f9eb-73f8-4f9e-9bc9-f9ed4e81b6e0" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br><br>
 - The CIP SAP G/L data append is joined with the PRPS table from SAP with the following expression. The REGEXP_REPLACE function is used to link the datasets together even if the join column of "Assignment" from the "Append Rows" dataset and the "POSID" column from the "Select_PRPS" have inconsistent formatting. The pattern "[^a-zA-Z0-9]" looks for any character that is not a lowercase letter, not an uppercase letter, and not a number. It then replaces non-alphanumeric characters (spaces, dashes, slashes, periods) with nothing (an empty string).
 
 <img width="1058" alt="image" src="https://github.com/user-attachments/assets/a7d57037-1828-421f-932e-5ca371c57666" />
