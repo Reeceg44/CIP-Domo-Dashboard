@@ -42,5 +42,12 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 - RPSCO is another native table to SAP connected to DOMO via an ODBC. 
 - It containes budget information for object numbers within the SAP ecosystem.
-- WBS elements from PRPS each have their own object number. Thus, RPSCO and PRPS are joined together in the ETL to show budget infrmation by WBS element. 
+- WBS elements from PRPS each have their own object number. Thus, RPSCO and PRPS are joined together in the ETL to show budget infrmation by WBS element.
+
+## 2. Formula Adds and Filters
+
+- Formulas/additional columns were added to the "CIP from 2018 to 2024" Excel upload to possess the same amount of columns as the "CIP since 1/1/2025" in order for the later append between the two datasets to function properly.
+
+<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/61f4f9eb-73f8-4f9e-9bc9-f9ed4e81b6e0" />
+
 
