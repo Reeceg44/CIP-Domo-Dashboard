@@ -32,7 +32,7 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - PRPS is a table native to SAP S/4HANA. It contains information pertaining to WBS elements such as project names, descriptions, company codes, etc.
 - This PRPS table is considered by DOMO to be an ODBC (Open Database Connectivity). The dataset updates on a daily basis.
 
-<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/89fed7ab-5d62-48f4-a9d8-5dc82c025ad7" /> CIP Open Projects Google Sheet
+<img width="20" height="20" alt="image" src="https://github.com/user-attachments/assets/89fed7ab-5d62-48f4-a9d8-5dc82c025ad7" />  CIP Open Projects Google Sheet
 
 - The function of this Google sheet is to list relevant information related to WBS elements with non-zero balances in CIP. It is connected to DOMO via DOMO's native Google Sheets connector tool. 
 - Finance representatives from various business units have the ability to make changes to items such as in-service dates, project managers, and comments regarding the status of WBS elements.
@@ -44,10 +44,27 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - It containes budget information for object numbers within the SAP ecosystem.
 - WBS elements from PRPS each have their own object number. Thus, RPSCO and PRPS are joined together in the ETL to show budget infrmation by WBS element.
 
-## 2. Formula Adds and Filters
+## 2. Formula Adds and Joins
 
 - Formulas/additional columns were added to the "CIP from 2018 to 2024" Excel upload to possess the same amount of columns as the "CIP since 1/1/2025" in order for the later append between the two datasets to function properly.
 
 <img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/61f4f9eb-73f8-4f9e-9bc9-f9ed4e81b6e0" />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+- The CIP SAP G/L data append is joined with the PRPS table from SAP with the following expression. The REGEXP_REPLACE function is used to link the datasets together even if the join column of "Assignment" from the "Append Rows" dataset and the "POSID" column from the "Select_PRPS" have inconsistent formatting. The pattern "[^a-zA-Z0-9]" looks for any character that is not a lowercase letter, not an uppercase letter, and not a number. It then replaces non-alphanumeric characters (spaces, dashes, slashes, periods) with nothing (an empty string).
+
+<img width="1058" height="758" alt="image" src="https://github.com/user-attachments/assets/a7d57037-1828-421f-932e-5ca371c57666" />
+
+  
