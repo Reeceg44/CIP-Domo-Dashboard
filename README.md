@@ -64,4 +64,11 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
   <img width="1355" alt="image" src="https://github.com/user-attachments/assets/ae9718c2-f971-4da4-85d1-1fc69e59a25c" />
 
+## 3. Data Anonymization and Obfuscation
+
+- Most of the fields across this ETL contain sensitive information about the company; thus, I have employed multiple data anonymization techniques to protect the company's data privacy.
+- For most of the qualitative fields, I concatenated the base column with a RAND() function which returns a pseudo-random value between 0 and 1. I then wrapped them in a SHA1() functions to generate 40-character hexadecimal strings based on the partially randomized values. 
+- For the date columns, I used DATE_ADD and DATE_SUB functions to add or subtract an undisclosed number of days from a given column with the date data type.
+ 
+
   
