@@ -69,6 +69,13 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - Most of the fields across this ETL contain sensitive information about the company; thus, I have employed multiple data anonymization techniques to protect the company's data privacy.
 - For most of the qualitative fields, I concatenated the base column with a RAND() function which returns a pseudo-random value between 0 and 1. I then wrapped them in a SHA1() functions to generate 40-character hexadecimal strings based on the partially randomized values. 
 - For the date columns, I used DATE_ADD and DATE_SUB functions to add or subtract an undisclosed number of days from a given column with the date data type.
- 
+- The numeric columns such as "Actuals" were obfuscated with RAND() functions as well. An example is IFNULL(`Actuals`* (1 + (RAND() * 0.05)),0).
+
+ <img width="1386" alt="image" src="https://github.com/user-attachments/assets/b8df267d-dfd5-48d1-af6d-9f4613dd8ee8" />
+
+<br><br>
+- One of the visualizations used in the dashboard is a chart showing the running total balance of the CIP account over time. In order to obfuscate the trend line of the balance, I used a group by tile to group the rows by the anonymized posting date column and then aggregate the same column with a count function.
+
+<img width="1269"  alt="image" src="https://github.com/user-attachments/assets/2e49fc9b-7d90-48e3-ad09-bb2fd646f329" />
 
   
