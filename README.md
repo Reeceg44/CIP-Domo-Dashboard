@@ -44,7 +44,7 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - It containes budget information for object numbers within the SAP ecosystem.
 - WBS elements from PRPS each have their own object number. Thus, RPSCO and PRPS are joined together in the ETL to show budget infrmation by WBS element.
 
-## 2. Formula Adds and Joins
+## 2. Formula Adds, Joins, and Group By
 
 - Formulas/additional columns were added to the "CIP from 2018 to 2024" Excel upload to possess the same amount of columns as the "CIP since 1/1/2025" in order for the later append between the two datasets to function properly.
 
@@ -54,5 +54,14 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - The CIP SAP G/L data append is joined with the PRPS table from SAP with the following expression. The REGEXP_REPLACE function is used to link the datasets together even if the join column of "Assignment" from the "Append Rows" dataset and the "POSID" column from the "Select_PRPS" have inconsistent formatting. The pattern "[^a-zA-Z0-9]" looks for any character that is not a lowercase letter, not an uppercase letter, and not a number. It then replaces non-alphanumeric characters (spaces, dashes, slashes, periods) with nothing (an empty string).
 
 <img width="1058" alt="image" src="https://github.com/user-attachments/assets/a7d57037-1828-421f-932e-5ca371c57666" />
+
+<br><br>
+- A group by tile is used for the RPSCO table from SAP. Column OBJNR (Object Number) specifies the grouping. The "Budget" and "Actuals" columns are created in the group by to show budget and actual values by project number.
+- The "Budget" and "Actuals" columns are both aggregated with the SUM() function. Both use CASE statements to determine whether or not to include rows from RPSCO in their respective aggregations.
+- The VORGA (Budget Type) column is used to establish the SUM() parameters in the case statement.
+- "KBUD" indicates that VORGA is returning budget values for a given row. "COIN" indicates that VORGA is returning actual values for a given row; therefore, it should sum WLP01 through WLP16.
+- The "WLPXX" fields in this table contain actual values for the periods in a given year. There are only 12 months in a year so WLP13 through WLP16 are used as special periods in SAP.
+
+  <img width="1355" alt="image" src="https://github.com/user-attachments/assets/ae9718c2-f971-4da4-85d1-1fc69e59a25c" />
 
   
