@@ -92,7 +92,11 @@ Dataset: CIP Dataset created from joining multiple tables within Domo's native E
 <img width="1637" height="690" alt="image" src="https://github.com/user-attachments/assets/ae0b9aa6-a2cd-47d8-a97f-d494c51507bc" />
 <br><br>
 
-- The below cards give detail about the balance in CIP. The amounts are inconsistent because they're being obfuscated by the formulas created in the ETL. 
+- The filters are interactive as shown below:
+<img width="1262" alt="image" src="https://github.com/user-attachments/assets/28ce586c-2401-4bc7-83f2-e20f89030e2e" />
+<br><br>
+
+- The below cards give detail about the balance in CIP. The amounts are inconsistent because they're being obfuscated by the formulas created in the ETL.
 <img width="1600" alt="image" src="https://github.com/user-attachments/assets/3c74c99d-8b71-40b9-917a-7e013650de76" />
 
   
