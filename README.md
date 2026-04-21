@@ -76,7 +76,23 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 <img width="1378" alt="image" src="https://github.com/user-attachments/assets/0e4dc072-4f77-4e8b-a33f-7c09c656d3a9" />
 
 
+## 4. Building the Interactive Dashboard
 
+- To re-iterate, the point of building this dataset and its dashboard is to give the business units a proper way to track what projects are in CIP. Since the business units are the end users, the dashboard should be interactive and user-friendly in some way.
 
+- At the top of the dashboard, there are two interactive text boxes containing links to capital resources such as a helpful video in Google Drive showing users how to fill out a PCS (Project Cost Summary) template.
+- There is also a link that directs users to the Google sheet that's joined with the data in the ETL. The users can edit project information such as the project manager, updated finish date, notes about the project, etc.
+- As users make updates to the Google sheet, the data in the ETL will be updated as well because of Domo's connector tool.
+
+<img width="1681" alt="image" src="https://github.com/user-attachments/assets/7946bbb6-970a-40f8-b34b-2198ed60573a" />
+<br><br>
+
+- Two filter cards were added to allow users to filter on the segment or the person responsible.
+- The table card shows a preview of the underlying data in the ETL.
+<img width="1637" height="690" alt="image" src="https://github.com/user-attachments/assets/ae0b9aa6-a2cd-47d8-a97f-d494c51507bc" />
+<br><br>
+
+- The below cards give detail about the balance in CIP. The amounts are inconsistent because they're being obfuscated by the formulas created in the ETL. 
+<img width="1600" alt="image" src="https://github.com/user-attachments/assets/3c74c99d-8b71-40b9-917a-7e013650de76" />
 
   
