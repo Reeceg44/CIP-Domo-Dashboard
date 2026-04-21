@@ -99,4 +99,6 @@ Dataset: CIP Dataset created from joining multiple tables within Domo's native E
 - The below cards give detail about the balance in CIP. The amounts are inconsistent because they're being obfuscated by the formulas created in the ETL.
 <img width="1600" alt="image" src="https://github.com/user-attachments/assets/3c74c99d-8b71-40b9-917a-7e013650de76" />
 
+## If you have any questions, please feel free to contact me on [LinkedIn](https://www.linkedin.com/in/reeceelton/).
+
   
