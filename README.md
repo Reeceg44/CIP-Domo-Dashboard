@@ -13,7 +13,8 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 
 ## ETL Preview:
 
-<img width="1889" height="707" alt="image" src="https://github.com/user-attachments/assets/6d8a5348-6a4a-4649-82d7-ca7c0b643bdc" />
+<img width="1193" alt="image" src="https://github.com/user-attachments/assets/433bcf8d-fb8c-4309-9874-76807370712a" />
+
 
 
 ## 1. Data Sources
@@ -62,7 +63,8 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - "KBUD" indicates that VORGA is returning budget values for a given row. "COIN" indicates that VORGA is returning actual values for a given row; therefore, it should sum WLP01 through WLP16.
 - The "WLPXX" fields in this table contain actual values for the periods in a given year. There are only 12 months in a year so WLP13 through WLP16 are used as special periods in SAP.
 
-  <img width="1355" alt="image" src="https://github.com/user-attachments/assets/ae9718c2-f971-4da4-85d1-1fc69e59a25c" />
+<img width="1573" alt="image" src="https://github.com/user-attachments/assets/a3986982-b50f-459a-845e-49911a468c77" />
+
 
 ## 3. Data Anonymization and Obfuscation
 
@@ -71,12 +73,9 @@ Dataset: CIP Dataset created from joining multiple tables within DOMO's native E
 - For the date columns, I used DATE_ADD and DATE_SUB functions to add or subtract an undisclosed number of days from a given column with the date data type.
 - The numeric columns such as "Actuals" were obfuscated with RAND() functions as well. An example is IFNULL(`Actuals`* (1 + (RAND() * 0.05)),0).
 
- <img width="1386" alt="image" src="https://github.com/user-attachments/assets/b8df267d-dfd5-48d1-af6d-9f4613dd8ee8" />
+<img width="1378" alt="image" src="https://github.com/user-attachments/assets/0e4dc072-4f77-4e8b-a33f-7c09c656d3a9" />
 
-<br><br>
-- One of the visualizations used in the dashboard is a chart showing the running total balance of the CIP account over time. In order to obfuscate the trend line of the balance, I used a group by tile to group the rows by the anonymized posting date column and then aggregate the same column with a count function.
 
-<img width="1269"  alt="image" src="https://github.com/user-attachments/assets/2e49fc9b-7d90-48e3-ad09-bb2fd646f329" />
 
 
 
